@@ -1,0 +1,9 @@
+Fri Sep 01 2023 19:53:38 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ 
+Invalid `prisma.user.create()` invocation in
+E:\Next Level Web Development\Assignment-8\Book-Catalog\src\app\modules\auth\auth.service.ts:24:37
+
+  21 // Hash the user password
+  22 const hashedPassword = await bcrypt.hash(userData?.password, 10);
+  23 
+→ 24 const newUser = await prisma.user.create(
+Error converting field "role" of expected non-nullable type "String", found incompatible value of "admin".
