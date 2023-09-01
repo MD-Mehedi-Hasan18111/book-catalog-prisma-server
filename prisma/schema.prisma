@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String            @id @default(uuid())
+  name             String
+  email            String            @unique
+  password         String
+  role             String
+  contactNo        String
+  address          String
+  profileImg       String?
+  reviewAndRatings ReviewAndRating[]
+  orders           Order[]
+}
+
+model Category {
+  id    String @id @default(uuid())
+  title String
+  books Book[]
+}
+
+model Book {
+  id               String            @id @default(uuid())
+  title            String
+  author           String
+  price            Float
+  genre            String
+  publicationDate  String
+  categoryId       String
+  reviewAndRatings ReviewAndRating[]
+
+  category Category @relation(fields: [categoryId], references: [id])
+}
+
+model ReviewAndRating {
+  id     String @id @default(uuid())
+  review String
+  rating Int
+  userId String
+  bookId String
+
+  user User @relation(fields: [userId], references: [id])
+  book Book @relation(fields: [bookId], references: [id])
+}
+
+model Order {
+  id           String      @id @default(uuid())
+  userId       String
+  orderedBooks Json
+  status       OrderStatus @default(Pending)
+  createdAt    DateTime    @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+enum OrderStatus {
+  Pending   @map("pending")
+  Shipped   @map("shipped")
+  Delivered @map("delivered")
+}
