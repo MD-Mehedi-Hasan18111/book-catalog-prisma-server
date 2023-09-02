@@ -19,6 +19,16 @@
             "date": 1693581325801,
             "name": "E:\\Next Level Web Development\\Assignment-8\\Book-Catalog\\logs\\winston\\errors\\phu-2023-01-09-21-error.log",
             "hash": "42c0858d8d12bed015c8e0ad135ecccb42e9dbbc2cad583c74b6ca9d27dc9cb6"
+        },
+        {
+            "date": 1693668591437,
+            "name": "E:\\Next Level Web Development\\Assignment-8\\Book-Catalog\\logs\\winston\\errors\\phu-2023-02-09-21-error.log",
+            "hash": "7a8b5de760f5ebca6894208316e893f168f91a8d1316a32aad8d242a1c57c19b"
+        },
+        {
+            "date": 1693672833590,
+            "name": "E:\\Next Level Web Development\\Assignment-8\\Book-Catalog\\logs\\winston\\errors\\phu-2023-02-09-22-error.log",
+            "hash": "237ee69a1089589217917597858a948c7563b2192e81902489b8d6d00dea17f1"
         }
     ],
     "hashType": "sha256"

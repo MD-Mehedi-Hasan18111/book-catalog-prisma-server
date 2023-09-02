@@ -9,4 +9,6 @@ router.get('/', auth(ENUM_USER_ROLE.ADMIN), UsersController.getAllUsers);
 
 router.get('/:id', auth(ENUM_USER_ROLE.ADMIN), UsersController.getSingleUser);
 
+router.patch('/:id', auth(ENUM_USER_ROLE.ADMIN), UsersController.updateUser);
+
 export const UserRoutes = router;

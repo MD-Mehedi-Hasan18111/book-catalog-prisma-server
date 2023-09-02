@@ -1,4 +1,6 @@
-import { PrismaClient } from '.prisma/client';
+import { PrismaClient, User } from '.prisma/client';
+import httpStatus from 'http-status';
+import ApiError from '../../../errors/ApiError';
 
 const prisma = new PrismaClient();
 
@@ -35,7 +37,32 @@ const getSingleUser = async (userId: string) => {
   return user;
 };
 
+const updateUser = async (
+  userId: string,
+  userUpdateData: Partial<User>
+): Promise<User> => {
+  const isExistUser = await prisma.user.findUnique({
+    where: {
+      id: userId,
+    },
+  });
+
+  if (!isExistUser) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'User not found!');
+  }
+
+  const user = await prisma.user.update({
+    where: {
+      id: userId,
+    },
+    data: userUpdateData,
+  });
+
+  return user;
+};
+
 export const UserService = {
   getAllUsers,
   getSingleUser,
+  updateUser,
 };

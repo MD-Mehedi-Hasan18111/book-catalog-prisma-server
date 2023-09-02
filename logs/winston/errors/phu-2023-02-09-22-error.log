@@ -1,0 +1,22 @@
+Sat Sep 02 2023 22:40:33 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ 
+Invalid `prisma.user.findMany()` invocation in
+E:\Next Level Web Development\Assignment-8\Book-Catalog\src\app\modules\users\users.service.ts:8:35
+
+  5 const prisma = new PrismaClient();
+  6 
+  7 const getAllUsers = async () => {
+→ 8   const users = await prisma.user.findMany(
+Can't reach database server at `containers-us-west-201.railway.app`:`7750`
+
+Please make sure your database server is running at `containers-us-west-201.railway.app`:`7750`.
+Sat Sep 02 2023 22:42:16 } [PH] error: 🐱‍🏍 globalErrorHandler ~~ 
+Invalid `prisma.user.findMany()` invocation in
+E:\Next Level Web Development\Assignment-8\Book-Catalog\src\app\modules\users\users.service.ts:8:35
+
+  5 const prisma = new PrismaClient();
+  6 
+  7 const getAllUsers = async () => {
+→ 8   const users = await prisma.user.findMany(
+Can't reach database server at `containers-us-west-201.railway.app`:`7750`
+
+Please make sure your database server is running at `containers-us-west-201.railway.app`:`7750`.
